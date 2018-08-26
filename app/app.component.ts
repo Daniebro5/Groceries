@@ -1,0 +1,28 @@
+import {Component} from "@angular/core";
+
+@Component({
+    selector: "my-app",
+    template: `
+        <StackLayout>
+            <Image src="res://logo_login" stretch="none" horizontalAlignment="center"></Image>
+            <TextField [(ngModel)]="email" hint="Email Address" keyboardType="email"
+                       autocorrect="false" autocapitalizationType="none"></TextField>
+            <TextField hint="Password" secure="true"></TextField>
+            <Button [text]="isLogginIn ? 'Sign in' : 'Sign up'" class="submit-button" (tap)="submit()"></Button>
+            <Button [text]="isLogginIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
+        </StackLayout>
+    `,
+    styleUrls: ['pages/login/login-common.css', 'pages/login/login.css']
+})
+export class AppComponent {
+    email = 'daniebro.5@gmail.com'
+    isLoggingIn = true;
+
+    submit() {
+        alert('You\'re using: ' + this.email);
+    }
+
+    toggleDisplay() {
+        this.isLoggingIn = !this.isLoggingIn;
+    }
+}
