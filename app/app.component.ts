@@ -8,8 +8,8 @@ import {Component} from "@angular/core";
             <TextField [(ngModel)]="email" hint="Email Address" keyboardType="email"
                        autocorrect="false" autocapitalizationType="none"></TextField>
             <TextField hint="Password" secure="true"></TextField>
-            <Button [text]="isLogginIn ? 'Sign in' : 'Sign up'" class="submit-button" (tap)="submit()"></Button>
-            <Button [text]="isLogginIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
+            <Button [text]="isLoggingIn ? 'Sign in' : 'Sign up'" class="submit-button" (tap)="submit()"></Button>
+            <Button [text]="isLoggingIn ? 'Sign up' : 'Back to login'" (tap)="toggleDisplay()"></Button>
         </StackLayout>
     `,
     styleUrls: ['pages/login/login-common.css', 'pages/login/login.css']
